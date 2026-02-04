@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Name Check</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+      /* Background */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #ffd9e3 0%, #f7b7cf 100%);
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Main white box */
+body::before {
+    content: "";
+    position: absolute;
+    width: 640px;
+    height: 180px;
+    background: white;
+    border-radius: 40px;
+    box-shadow:
+        0 40px 80px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+    z-index: -1;
+}
+
+/* Title */
+h2 {
+    margin: 0 0 22px 0;
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    text-align: left;
+    transform: translateX(-140px); /* pulls text inside box visually */
+}
+
+/* Input */
+input {
+    width: 320px;
+    height: 52px;
+    padding: 0 22px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: #ffffff;
+    box-shadow:
+        inset 0 6px 14px rgba(0,0,0,0.12),
+        0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Button */
+button {
+    height: 52px;
+    width: 130px;
+    margin-left: 12px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    background: linear-gradient(135deg, #ff7fa8, #ff9fc2);
+    color: white;
+    cursor: pointer;
+    box-shadow:
+        0 15px 30px rgba(255, 120, 160, 0.45);
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 22px 40px rgba(255, 120, 160, 0.6);
+}
+
+/* Message */
+#message {
+    margin-top: 14px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <h5>Enter your name</h5>
+
+    <input type="text" id="nameInput" placeholder="Your name">
+    <button onclick="checkName()">Submit</button>
+
+    <p id="message" style="color:red;"></p>
+
+    <script>
+        function checkName() {
+            const correctName = ["Jejes","jejes","jesslyn","Jesslyn"] // change this
+            const userName = document.getElementById("nameInput").value;
+
+            if (correctName.includes(userName)) {
+                window.location.href = "quiziz.html"; // destination
+            } else {
+                document.getElementById("message").innerText =
+                    "Wrong name. Try again.";
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
